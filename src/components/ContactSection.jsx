@@ -13,7 +13,7 @@ const ContactSection = forwardRef(({ onLightModeTransition, onButtonPositionChan
           <div className="contact-grid">
             <div className="contact-item">
               <span className="label">Email</span>
-              <span className="value">yusuf@example.com</span>
+              <span className="value">yusuf.aslan.home@gmail.com</span>
             </div>
             <div className="contact-item">
               <span className="label">LinkedIn</span>
