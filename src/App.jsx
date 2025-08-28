@@ -8,6 +8,7 @@ import PortfolioSection from './components/PortfolioSection'
 import ContactSection from './components/ContactSection'
 import TransitionScreen from './components/TransitionScreen'
 import MouseToButtonPath from './components/MouseToButtonPath'
+import PortfolioHoverImage from './components/PortfolioHoverImage'
 
 function App() {
   const mainRef = useRef(null)
@@ -78,6 +79,7 @@ function App() {
   return (
     <div className={`app ${isLightMode ? 'light-mode' : ''}`}>
       <MouseFollower isLightMode={isLightMode} />
+      <PortfolioHoverImage showFullPortfolio={showFullPortfolio} />
       <MouseToButtonPath 
         isVisible={!showFullPortfolio} 
         buttonPosition={buttonPosition}

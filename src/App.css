@@ -1073,6 +1073,66 @@ body:has(.transition-screen) {
   backface-visibility: hidden; /* Prevent flickering */
 }
 
+/* Portfolio Hover Image */
+.portfolio-hover-image {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0;
+  transform: scale(0.8) translateY(10px);
+  transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  will-change: transform, opacity;
+}
+
+.portfolio-hover-image.visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.portfolio-hover-image img {
+  width: 200px;
+  height: 120px;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+  transition: transform 0.15s ease;
+}
+
+.portfolio-hover-image:hover img {
+  transform: scale(1.05);
+}
+
+/* Light mode styles for portfolio hover image */
+.app.light-mode .portfolio-hover-image {
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Add subtle glow effect in dark mode */
+.portfolio-hover-image::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  border-radius: 14px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.portfolio-hover-image.visible::before {
+  opacity: 1;
+}
+
 /* Mouse to Button Path */
 .path-dot {
   position: fixed;
