@@ -17,11 +17,11 @@ const ContactSection = forwardRef(({ onLightModeTransition, onButtonPositionChan
             </div>
             <div className="contact-item">
               <span className="label">LinkedIn</span>
-              <span className="value">linkedin.com/in/yusuf</span>
+              <span className="value">linkedin.com/in/yusufaslan-ai</span>
             </div>
             <div className="contact-item">
               <span className="label">GitHub</span>
-              <span className="value">github.com/yusuf</span>
+              <span className="value">github.com/PaidYusuf</span>
             </div>
             <div className="contact-item">
               <span className="label">Location</span>

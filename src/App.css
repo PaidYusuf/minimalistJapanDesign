@@ -48,25 +48,119 @@
 
 /* App Light Mode */
 .app.light-mode {
-  background: #1a1a1a;
-  color: #ffffff;
+  background: #000000;
+  color: #f0f0f0;
 }
 
 .app.light-mode .section {
-  background: #1a1a1a !important;
+  background: #000000 !important;
 }
 
 .app.light-mode .navigation {
-  background: rgba(26, 26, 26, 0.95);
+  background: rgba(0, 0, 0, 0.95);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .app.light-mode .nav-item span {
-  color: #ccc;
+  color: #888;
 }
 
 .app.light-mode .nav-item:hover span {
+  color: #f0f0f0;
+}
+
+/* Dark mode text colors */
+.app.light-mode .main-title {
   color: #ffffff;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.app.light-mode .subtitle {
+  color: #888;
+}
+
+.app.light-mode .description {
+  color: #666;
+}
+
+.app.light-mode .section-title {
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+/* Dark mode contact items */
+.app.light-mode .contact-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.app.light-mode .contact-item:hover {
+  border-bottom-color: rgba(255, 255, 255, 0.3);
+}
+
+.app.light-mode .contact-item .label {
+  color: #888;
+}
+
+.app.light-mode .contact-item .value {
+  color: #f0f0f0;
+}
+
+/* Dark mode vertical text */
+.app.light-mode .vertical-text-left {
+  color: #666;
+}
+
+/* Dark mode blur shapes - minimalist gray spots */
+.app.light-mode .blur-shape {
+  background: rgba(64, 64, 64, 0.3);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+.app.light-mode .main-blur {
+  background: rgba(96, 96, 96, 0.25);
+}
+
+.app.light-mode .about-blur {
+  background: rgba(80, 80, 80, 0.3);
+  border: 1px solid rgba(112, 112, 112, 0.2);
+}
+
+.app.light-mode .portfolio-blur {
+  background: rgba(72, 72, 72, 0.3);
+  border: 1px solid rgba(104, 104, 104, 0.2);
+}
+
+.app.light-mode .contact-blur {
+  background: rgba(88, 88, 88, 0.3);
+  border: 1px solid rgba(120, 120, 120, 0.2);
+}
+
+/* Dark mode accent dot */
+.app.light-mode .accent-dot {
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Dark mode sections - solid black */
+.app.light-mode .about-section {
+  background: #000000;
+}
+
+.app.light-mode .portfolio-section {
+  background: #000000;
+}
+
+.app.light-mode .contact-section {
+  background: #000000;
+}
+
+/* Dark mode yin-yang button hint */
+.app.light-mode .button-hint,
+.app.light-mode .portfolio-button-hint {
+  color: #888;
 }
 
 /* Navigation */
@@ -127,7 +221,7 @@
 
 .section-header {
   position: absolute;
-  top: 120px;
+  top: 100px;
   left: 0;
   right: 0;
   display: flex;
@@ -205,7 +299,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 80px;
+  padding-top: 160px;
 }
 
 /* Portfolio Section */
@@ -220,7 +314,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 80px;
+  padding-top: 160px;
   overflow-y: auto;
 }
 
@@ -391,6 +485,7 @@
   gap: 25px;
   max-width: 400px;
   margin-top: 40px;
+  padding: 0px 100px;
 }
 
 .contact-item {
@@ -431,10 +526,48 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 80px;
+  padding-top: 160px;
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+  .section {
+    padding: 0 60px;
+  }
+  
+  .section-header {
+    top: 90px;
+  }
+  
+  .about-content,
+  .portfolio-content,
+  .contact-content {
+    padding-top: 140px;
+  }
+}
+
+@media (max-width: 968px) {
+  .section {
+    padding: 0 50px;
+  }
+  
+  .section-header {
+    top: 80px;
+  }
+  
+  .section-title {
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    padding: 8px 24px;
+  }
+  
+  .about-content,
+  .portfolio-content,
+  .contact-content {
+    padding-top: 130px;
+  }
+}
+
 @media (max-width: 768px) {
   .navigation {
     gap: 20px;
@@ -442,6 +575,22 @@
   
   .section {
     padding: 0 40px;
+  }
+  
+  .section-header {
+    top: 70px;
+  }
+  
+  .section-title {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    padding: 6px 20px;
+  }
+  
+  .about-content,
+  .portfolio-content,
+  .contact-content {
+    padding-top: 120px;
   }
   
   .main-title {
@@ -466,6 +615,33 @@
   
   .blur-shape {
     opacity: 0.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 0 20px;
+  }
+  
+  .section-header {
+    top: 60px;
+  }
+  
+  .section-title {
+    font-size: 1rem;
+    letter-spacing: 1px;
+    padding: 5px 15px;
+  }
+  
+  .about-content,
+  .portfolio-content,
+  .contact-content {
+    padding-top: 100px;
+  }
+  
+  .main-title {
+    font-size: 2rem;
+    letter-spacing: 2px;
   }
 }
 
