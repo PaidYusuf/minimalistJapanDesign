@@ -568,58 +568,62 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1a1a1a, #000000);
+  color: #fff;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  z-index: 10000;
-  opacity: 1;
-  transition: opacity 1s ease-out;
-}
-
-.transition-screen.fade-out {
+  align-items: center;
+  z-index: 1000;
   opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
 }
 
-.transition-content {
+.transition-quote {
+  font-size: 2rem;
   text-align: center;
-  color: #ffffff;
-}
-
-.quote-container {
-  animation: fadeInUp 2s ease-out;
-}
-
-.japanese-quote {
-  font-size: 2.5rem;
+  margin-bottom: 2rem;
   font-weight: 300;
-  letter-spacing: 6px;
-  margin-bottom: 40px;
-  color: #ffffff;
-  text-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
-  line-height: 1.2;
+  opacity: 0;
+  animation: slideUp 1s ease-out 0.5s forwards;
 }
 
-.english-quote {
+.transition-author {
   font-size: 1.2rem;
-  font-weight: 300;
-  letter-spacing: 1px;
-  margin-bottom: 30px;
-  color: #e0e0e0;
   font-style: italic;
-  line-height: 1.6;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  opacity: 0.8;
+  opacity: 0;
+  animation: slideUp 1s ease-out 1s forwards;
 }
 
-.quote-attribution {
-  font-size: 1rem;
-  color: #888;
-  font-weight: 300;
-  letter-spacing: 1px;
+/* Mouse to Button Path */
+.path-dot {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 215, 0, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.light-mode .path-dot {
+  background: rgba(139, 69, 19, 0.6);
+  box-shadow: 0 0 10px rgba(139, 69, 19, 0.3);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
 }
 
 @keyframes fadeInUp {

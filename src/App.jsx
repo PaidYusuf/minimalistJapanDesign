@@ -7,6 +7,7 @@ import AboutSection from './components/AboutSection'
 import PortfolioSection from './components/PortfolioSection'
 import ContactSection from './components/ContactSection'
 import TransitionScreen from './components/TransitionScreen'
+import MouseToButtonPath from './components/MouseToButtonPath'
 
 function App() {
   const mainRef = useRef(null)
@@ -17,6 +18,7 @@ function App() {
   const [showTransition, setShowTransition] = useState(false)
   const [showFullPortfolio, setShowFullPortfolio] = useState(false)
   const [isLightMode, setIsLightMode] = useState(false)
+  const [buttonPosition, setButtonPosition] = useState({ x: 0, y: 0 })
 
   const handleTransition = () => {
     setShowTransition(true)
@@ -31,6 +33,11 @@ function App() {
   return (
     <div className={`app ${isLightMode ? 'light-mode' : ''}`}>
       <MouseFollower isLightMode={isLightMode} />
+      <MouseToButtonPath 
+        isVisible={!showFullPortfolio} 
+        buttonPosition={buttonPosition}
+        isLightMode={isLightMode}
+      />
       
       <Navigation 
         mainRef={mainRef}
@@ -41,7 +48,11 @@ function App() {
       />
 
       <main className="main-container">
-        <MainSection ref={mainRef} onTransition={handleTransition} />
+        <MainSection 
+          ref={mainRef} 
+          onTransition={handleTransition}
+          onButtonPositionChange={setButtonPosition}
+        />
         
         {showFullPortfolio && (
           <>
