@@ -61,11 +61,19 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.app.light-mode .nav-item span {
+.app.light-mode .nav-english {
   color: #888;
 }
 
-.app.light-mode .nav-item:hover span {
+.app.light-mode .nav-japanese {
+  color: #666;
+}
+
+.app.light-mode .nav-item:hover .nav-english {
+  color: #f0f0f0;
+}
+
+.app.light-mode .nav-item:hover .nav-japanese {
   color: #f0f0f0;
 }
 
@@ -232,18 +240,37 @@
   position: relative;
 }
 
-.nav-item span {
-  font-size: 14px;
-  font-weight: 300;
-  letter-spacing: 2px;
-  color: #888;
-  transition: all 0.3s ease;
-  writing-mode: horizontal-tb;
+.nav-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
 }
 
-.nav-item:hover span {
-  color: #2c2c2c;
+.nav-english {
+  font-size: 12px;
   font-weight: 400;
+  letter-spacing: 1.5px;
+  color: #888;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.nav-japanese {
+  font-size: 13px;
+  font-weight: 300;
+  color: #666;
+  font-family: 'Noto Sans JP', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.nav-item:hover .nav-english {
+  color: #2c2c2c;
+  font-weight: 500;
+}
+
+.nav-item:hover .nav-japanese {
+  color: #2c2c2c;
 }
 
 /* Main Container */
