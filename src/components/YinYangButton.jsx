@@ -9,7 +9,7 @@ const YinYangButton = ({ onClick }) => {
           <div className="dot-yin"></div>
         </div>
       </button>
-      <p className="button-hint">Discover the balance</p>
+      <p className="button-hint">Illuminate the hidden stories</p>
     </div>
   )
 }

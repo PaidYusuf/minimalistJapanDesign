@@ -41,11 +41,11 @@ function App() {
       />
 
       <main className="main-container">
-        <MainSection ref={mainRef} />
-        <AboutSection ref={aboutRef} onTransition={handleTransition} />
+        <MainSection ref={mainRef} onTransition={handleTransition} />
         
         {showFullPortfolio && (
           <>
+            <AboutSection ref={aboutRef} />
             <PortfolioSection ref={portfolioRef} />
             <ContactSection ref={contactRef} />
           </>

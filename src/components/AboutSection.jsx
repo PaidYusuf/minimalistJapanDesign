@@ -1,7 +1,6 @@
 import { forwardRef } from 'react'
-import YinYangButton from './YinYangButton'
 
-const AboutSection = forwardRef(({ onTransition }, ref) => {
+const AboutSection = forwardRef((props, ref) => {
   return (
     <section ref={ref} className="section about-section">
       <div className="blur-shape about-blur"></div>
@@ -30,9 +29,6 @@ const AboutSection = forwardRef(({ onTransition }, ref) => {
         <div className="vertical-text-right">
           <span>関于我</span>
         </div>
-      </div>
-      <div className="section-bottom">
-        <YinYangButton onClick={onTransition} />
       </div>
     </section>
   )

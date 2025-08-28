@@ -593,21 +593,26 @@
 }
 
 .japanese-quote {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 300;
-  letter-spacing: 4px;
-  margin-bottom: 30px;
+  letter-spacing: 6px;
+  margin-bottom: 40px;
   color: #ffffff;
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+  line-height: 1.2;
 }
 
 .english-quote {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 300;
-  letter-spacing: 2px;
-  margin-bottom: 20px;
-  color: #cccccc;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  color: #e0e0e0;
   font-style: italic;
+  line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .quote-attribution {

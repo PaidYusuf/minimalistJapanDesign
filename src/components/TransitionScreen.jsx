@@ -6,13 +6,13 @@ const TransitionScreen = ({ onComplete }) => {
 
   useEffect(() => {
     // Show the quote after a brief delay
-    const timer1 = setTimeout(() => setShowQuote(true), 500)
+    const timer1 = setTimeout(() => setShowQuote(true), 800)
     
-    // Start fade out after 4 seconds
-    const timer2 = setTimeout(() => setFadeOut(true), 4000)
+    // Start fade out after 6 seconds to give more time to read
+    const timer2 = setTimeout(() => setFadeOut(true), 6000)
     
-    // Complete the transition after 5 seconds
-    const timer3 = setTimeout(() => onComplete(), 5000)
+    // Complete the transition after 7 seconds
+    const timer3 = setTimeout(() => onComplete(), 7000)
 
     return () => {
       clearTimeout(timer1)
@@ -27,13 +27,13 @@ const TransitionScreen = ({ onComplete }) => {
         {showQuote && (
           <div className="quote-container">
             <div className="japanese-quote">
-              闇があるから光がある
+              光と影が織りなす物語
             </div>
             <div className="english-quote">
-              "Because there is darkness, there is light"
+              "In every shadow lies a story waiting to be illuminated, and in every light dwells wisdom earned through darkness. We are the architects of meaning, weaving purpose from the eternal dance between what is seen and unseen."
             </div>
             <div className="quote-attribution">
-              - Japanese Philosophy
+              - Philosophy of Balance
             </div>
           </div>
         )}
