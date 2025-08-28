@@ -1,7 +1,7 @@
 import { forwardRef } from 'react'
 import YinYangButton from './YinYangButton'
 
-const MainSection = forwardRef(({ onTransition, onButtonPositionChange }, ref) => {
+const MainSection = forwardRef(({ onTransition, onButtonPositionChange, showButton = true }, ref) => {
   return (
     <section ref={ref} className="section main-section">
       <div className="blur-shape main-blur"></div>
@@ -16,12 +16,14 @@ const MainSection = forwardRef(({ onTransition, onButtonPositionChange }, ref) =
         </div>
         <div className="accent-dot"></div>
       </div>
-      <div className="section-bottom">
-        <YinYangButton 
-          onClick={onTransition} 
-          onPositionChange={onButtonPositionChange}
-        />
-      </div>
+      {showButton && (
+        <div className="section-bottom">
+          <YinYangButton 
+            onClick={onTransition} 
+            onPositionChange={onButtonPositionChange}
+          />
+        </div>
+      )}
     </section>
   )
 })

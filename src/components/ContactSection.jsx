@@ -1,6 +1,7 @@
 import { forwardRef } from 'react'
+import PortfolioYinYangButton from './PortfolioYinYangButton'
 
-const ContactSection = forwardRef((props, ref) => {
+const ContactSection = forwardRef(({ onLightModeTransition, onButtonPositionChange }, ref) => {
   return (
     <section ref={ref} className="section contact-section">
       <div className="blur-shape contact-blur"></div>
@@ -31,6 +32,14 @@ const ContactSection = forwardRef((props, ref) => {
         <div className="vertical-text-left">
           <span>連絡先</span>
         </div>
+      </div>
+      
+      {/* Yin-Yang button for transitioning to light mode */}
+      <div className="contact-bottom">
+        <PortfolioYinYangButton 
+          onClick={onLightModeTransition}
+          onPositionChange={onButtonPositionChange}
+        />
       </div>
     </section>
   )

@@ -31,25 +31,40 @@ const MouseToButtonPath = ({ isVisible, buttonPosition }) => {
       const distance = Math.sqrt((endX - startX) ** 2 + (endY - startY) ** 2)
       const numberOfPoints = Math.min(Math.max(Math.floor(distance / 50), 3), 8)
       
+      if (distance < 100) {
+        setPathPoints([])
+        return
+      }
+
       const points = []
+      
+      // Determine curve direction based on mouse position relative to button
+      const mouseIsOnRight = startX > endX
+      const curveDirection = mouseIsOnRight ? -1 : 1 // Negative degrees for right, positive for left
+      const curveMagnitude = Math.min(distance * 0.25, 120) // Dynamic curve magnitude
       
       for (let i = 1; i <= numberOfPoints; i++) {
         const progress = i / (numberOfPoints + 1)
         
-        // Create a curved path with some randomness
+        // Linear interpolation for base position
         const baseX = startX + (endX - startX) * progress
         const baseY = startY + (endY - startY) * progress
         
-        // Add slight curve variation
-        const curveOffset = Math.sin(progress * Math.PI) * 30
-        const perpX = -(endY - startY) / distance
-        const perpY = (endX - startX) / distance
+        // Create smooth arc using sine function
+        const curveOffset = Math.sin(progress * Math.PI) * curveMagnitude * curveDirection
+        
+        // Calculate perpendicular direction for curve offset
+        const lineAngle = Math.atan2(endY - startY, endX - startX)
+        const perpAngle = lineAngle + Math.PI / 2
+        
+        const finalX = baseX + Math.cos(perpAngle) * curveOffset
+        const finalY = baseY + Math.sin(perpAngle) * curveOffset
         
         points.push({
-          x: baseX + perpX * curveOffset,
-          y: baseY + perpY * curveOffset,
+          x: finalX,
+          y: finalY,
           delay: i * 0.1,
-          scale: 0.8 + Math.sin(progress * Math.PI) * 0.4
+          scale: 0.6 + Math.sin(progress * Math.PI) * 0.4
         })
       }
       

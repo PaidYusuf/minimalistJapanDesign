@@ -563,6 +563,75 @@
   margin: 0;
 }
 
+/* Portfolio Yin Yang Button */
+.portfolio-yin-yang-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 4rem;
+  padding: 2rem 0;
+}
+
+.portfolio-yin-yang-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-yin-yang-button:hover {
+  transform: scale(1.1);
+}
+
+.portfolio-yin-yang-button .yin-yang {
+  width: 60px;
+  height: 60px;
+}
+
+.portfolio-yin-yang-button .yang {
+  width: 30px;
+  height: 60px;
+  border-radius: 0 60px 60px 0;
+}
+
+.portfolio-yin-yang-button .yin {
+  width: 30px;
+  height: 30px;
+}
+
+.portfolio-yin-yang-button .dot-yang {
+  top: 15px;
+  width: 8px;
+  height: 8px;
+}
+
+.portfolio-yin-yang-button .dot-yin {
+  bottom: 15px;
+  width: 8px;
+  height: 8px;
+}
+
+.portfolio-yin-yang-button:hover .yin-yang {
+  transform: rotate(45deg);
+}
+
+.portfolio-button-hint {
+  font-size: 0.8rem;
+  color: #888;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-align: center;
+  margin: 0;
+}
+
+.contact-bottom {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
 /* Transition Screen */
 .transition-screen {
   position: fixed;
@@ -577,25 +646,50 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  opacity: 0;
-  animation: fadeIn 0.5s ease-in forwards;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
 }
 
-.transition-quote {
-  font-size: 2rem;
+.transition-screen.fade-out {
+  opacity: 0;
+}
+
+.transition-content {
+  max-width: 800px;
+  padding: 2rem;
   text-align: center;
-  margin-bottom: 2rem;
+}
+
+.quote-container {
+  animation: fadeInUp 1s ease-out;
+}
+
+.japanese-quote {
+  font-size: 2.5rem;
   font-weight: 300;
+  margin-bottom: 2rem;
+  font-family: 'Noto Sans JP', sans-serif;
+  color: #ffd700;
   opacity: 0;
   animation: slideUp 1s ease-out 0.5s forwards;
 }
 
-.transition-author {
-  font-size: 1.2rem;
-  font-style: italic;
-  opacity: 0.8;
+.english-quote {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  font-weight: 300;
+  color: #f0f0f0;
   opacity: 0;
   animation: slideUp 1s ease-out 1s forwards;
+}
+
+.quote-attribution {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #ccc;
+  opacity: 0;
+  animation: slideUp 1s ease-out 1.5s forwards;
 }
 
 /* Mouse to Button Path */
@@ -634,5 +728,25 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
