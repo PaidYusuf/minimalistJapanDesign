@@ -1,25 +1,32 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 
 const TransitionScreen = ({ onComplete, isLightModeTransition = false }) => {
   const [showQuote, setShowQuote] = useState(false)
   const [fadeOut, setFadeOut] = useState(false)
 
+  // Use useCallback to prevent unnecessary re-renders
+  const handleComplete = useCallback(() => {
+    onComplete()
+  }, [onComplete])
+
   useEffect(() => {
-    // Show the quote after a brief delay (reduced from 0.8s to 0.3s)
-    const timer1 = setTimeout(() => setShowQuote(true), 300)
+    // Clear any existing timers to prevent conflicts
+    let timers = []
+
+    // Show the quote after a brief delay
+    timers.push(setTimeout(() => setShowQuote(true), 300))
     
     // Start fade out after 5 seconds
-    const timer2 = setTimeout(() => setFadeOut(true), 5000)
+    timers.push(setTimeout(() => setFadeOut(true), 5000))
     
     // Complete the transition after 6 seconds
-    const timer3 = setTimeout(() => onComplete(), 6000)
+    timers.push(setTimeout(() => handleComplete(), 6000))
 
+    // Cleanup function to clear all timers
     return () => {
-      clearTimeout(timer1)
-      clearTimeout(timer2)
-      clearTimeout(timer3)
+      timers.forEach(timer => clearTimeout(timer))
     }
-  }, [onComplete])
+  }, [handleComplete]) // Only depend on handleComplete
 
   return (
     <div className={`transition-screen ${fadeOut ? 'fade-out' : ''}`}>

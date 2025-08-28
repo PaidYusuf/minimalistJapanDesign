@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import './App.css'
 import MouseFollower from './components/MouseFollower'
 import Navigation from './components/Navigation'
@@ -20,6 +20,36 @@ function App() {
   const [isLightMode, setIsLightMode] = useState(false) // Start in light appearance (no CSS class)
   const [buttonPosition, setButtonPosition] = useState({ x: 0, y: 0 })
   const [isLightModeTransition, setIsLightModeTransition] = useState(false)
+
+  // Prevent scrolling when transition screen is active
+  useEffect(() => {
+    if (showTransition) {
+      // Store current scroll position
+      const scrollY = window.scrollY
+      document.body.style.overflow = 'hidden'
+      document.body.style.position = 'fixed'
+      document.body.style.top = `-${scrollY}px`
+      document.body.style.width = '100%'
+    } else {
+      // Restore scrolling and position
+      const scrollY = document.body.style.top
+      document.body.style.overflow = ''
+      document.body.style.position = ''
+      document.body.style.top = ''
+      document.body.style.width = ''
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || '0') * -1)
+      }
+    }
+
+    return () => {
+      // Cleanup on unmount
+      document.body.style.overflow = ''
+      document.body.style.position = ''
+      document.body.style.top = ''
+      document.body.style.width = ''
+    }
+  }, [showTransition])
 
   const handleTransition = () => {
     setShowTransition(true)

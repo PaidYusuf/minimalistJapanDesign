@@ -1013,20 +1013,30 @@
   z-index: 1000;
   opacity: 1;
   transition: opacity 0.5s ease-out;
+  overflow: hidden;
+}
+
+/* Prevent scrolling when transition is active */
+body:has(.transition-screen) {
+  overflow: hidden;
 }
 
 .transition-screen.fade-out {
   opacity: 0;
+  will-change: opacity;
 }
 
 .transition-content {
   max-width: 800px;
   padding: 2rem;
   text-align: center;
+  will-change: transform;
 }
 
 .quote-container {
   animation: fadeInUp 1s ease-out;
+  transform: translateZ(0); /* Force hardware acceleration */
+  backface-visibility: hidden; /* Prevent flickering */
 }
 
 .japanese-quote {
@@ -1037,6 +1047,8 @@
   color: #ffd700;
   opacity: 0;
   animation: slideUp 1s ease-out 0.5s forwards;
+  transform: translateZ(0); /* Force hardware acceleration */
+  backface-visibility: hidden; /* Prevent flickering */
 }
 
 .english-quote {
@@ -1047,6 +1059,8 @@
   color: #f0f0f0;
   opacity: 0;
   animation: slideUp 1s ease-out 1s forwards;
+  transform: translateZ(0); /* Force hardware acceleration */
+  backface-visibility: hidden; /* Prevent flickering */
 }
 
 .quote-attribution {
@@ -1055,6 +1069,8 @@
   color: #ccc;
   opacity: 0;
   animation: slideUp 1s ease-out 1.5s forwards;
+  transform: translateZ(0); /* Force hardware acceleration */
+  backface-visibility: hidden; /* Prevent flickering */
 }
 
 /* Mouse to Button Path */
