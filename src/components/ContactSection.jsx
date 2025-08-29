@@ -5,6 +5,19 @@ const ContactSection = forwardRef(({ onLightModeTransition, onButtonPositionChan
   return (
     <section ref={ref} className="section contact-section">
       <div className="blur-shape contact-blur"></div>
+      <div className="light-source-container">
+        <div className="light-source"></div>
+        <div className="light-drop light-drop-1"></div>
+        <div className="light-drop light-drop-2"></div>
+        <div className="light-drop light-drop-3"></div>
+        <div className="light-drop light-drop-4"></div>
+        <div className="light-drop light-drop-5"></div>
+        <div className="light-drop light-drop-6"></div>
+        <div className="light-drop light-drop-7"></div>
+        <div className="light-drop light-drop-8"></div>
+        <div className="light-drop light-drop-9"></div>
+        <div className="light-drop light-drop-10"></div>
+      </div>
       <div className="section-header">
         <h2 className="section-title">Contact</h2>
       </div>
