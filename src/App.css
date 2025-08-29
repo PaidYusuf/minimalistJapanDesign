@@ -374,6 +374,75 @@
   padding-top: 160px;
 }
 
+/* Light Path - Path of Light to Guide Users */
+.light-path-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.light-pulse {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 6px;
+  height: 30px;
+  background: radial-gradient(
+    ellipse,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.8) 30%,
+    rgba(255, 255, 255, 0.4) 60%,
+    transparent 100%
+  );
+  transform-origin: top right;
+  transform: rotate(60deg);
+  box-shadow: 
+    0 0 15px rgba(255, 255, 255, 0.8),
+    0 0 30px rgba(255, 255, 255, 0.6);
+  animation: lightPulseTravel 4s infinite ease-in-out;
+}
+
+@keyframes lightPulseTravel {
+  0% {
+    transform: rotate(60deg);
+    top: 0;
+    right: 0;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(60deg);
+    top: 100%;
+    right: 100%;
+    opacity: 0;
+  }
+}
+
+/* Dark mode light pulse enhancement */
+.app.light-mode .light-pulse {
+  background: radial-gradient(
+    ellipse,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.9) 30%,
+    rgba(255, 255, 255, 0.6) 60%,
+    transparent 100%
+  );
+  box-shadow: 
+    0 0 20px rgba(255, 255, 255, 0.9),
+    0 0 40px rgba(255, 255, 255, 0.7),
+    0 0 60px rgba(255, 255, 255, 0.5);
+}
+
 /* Portfolio Section */
 .portfolio-section {
   background: linear-gradient(180deg, #eeeeee 0%, #e8e8e8 100%);
@@ -789,6 +858,17 @@
     font-size: 0.6rem;
     max-width: 100px;
   }
+  
+  .light-path {
+    width: 1.5px;
+    opacity: 0.6;
+  }
+  
+  .light-pulse {
+    width: 4px;
+    height: 20px;
+    animation-duration: 3.5s;
+  }
 }
 
 @media (max-width: 480px) {
@@ -853,6 +933,17 @@
   .scroll-text {
     font-size: 0.5rem;
     max-width: 80px;
+  }
+  
+  .light-path {
+    width: 1px;
+    opacity: 0.5;
+  }
+  
+  .light-pulse {
+    width: 3px;
+    height: 15px;
+    animation-duration: 3s;
   }
 }
 

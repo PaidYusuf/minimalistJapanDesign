@@ -4,6 +4,9 @@ const AboutSection = forwardRef((props, ref) => {
   return (
     <section ref={ref} className="section about-section">
       <div className="blur-shape about-blur"></div>
+      <div className="light-path-container">
+        <div className="light-pulse"></div>
+      </div>
       <div className="section-header">
         <h2 className="section-title">About Me</h2>
       </div>
