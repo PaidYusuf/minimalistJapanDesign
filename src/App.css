@@ -115,6 +115,14 @@
   color: #f0f0f0;
 }
 
+.app.light-mode .contact-link:hover .value {
+  color: #4dc3ff;
+}
+
+.app.light-mode .contact-link:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+}
+
 /* Dark mode vertical text */
 .app.light-mode .vertical-text-left {
   color: #666;
@@ -441,6 +449,73 @@
     0 0 20px rgba(255, 255, 255, 0.9),
     0 0 40px rgba(255, 255, 255, 0.7),
     0 0 60px rgba(255, 255, 255, 0.5);
+}
+
+/* Follow the Light Button */
+.follow-light-button {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.follow-light-button:hover {
+  opacity: 1;
+  transform: translateY(-5px);
+}
+
+.follow-light-button .scroll-icon {
+  display: flex;
+  flex-direction: column;
+  gap: -2px;
+}
+
+.follow-light-button .scroll-arrow {
+  width: 12px;
+  height: 2px;
+  background: #fff;
+  position: relative;
+  animation: scrollPulse 2s infinite ease-in-out;
+}
+
+.follow-light-button .scroll-arrow:nth-child(1) {
+  animation-delay: 0s;
+  transform: rotate(45deg);
+  transform-origin: right;
+}
+
+.follow-light-button .scroll-arrow:nth-child(2) {
+  animation-delay: 0.2s;
+  transform: rotate(-45deg) translateX(2px) translateY(-2px);
+  transform-origin: left;
+}
+
+.follow-light-button .scroll-text {
+  font-size: 0.75rem;
+  color: #fff;
+  letter-spacing: 0.5px;
+  font-weight: 300;
+  margin-top: 8px;
+  text-align: center;
+  line-height: 1.2;
+  max-width: 120px;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.app.light-mode .follow-light-button .scroll-arrow {
+  background: #ffffff;
+}
+
+.app.light-mode .follow-light-button .scroll-text {
+  color: #ffffff;
 }
 
 /* Portfolio Section */
@@ -803,11 +878,98 @@
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Portfolio Scroll Button */
+.portfolio-scroll-button {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.portfolio-scroll-button:hover {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+.portfolio-scroll-button .scroll-icon {
+  display: flex;
+  flex-direction: column;
+  gap: -2px;
+}
+
+.portfolio-scroll-button .scroll-arrow {
+  width: 12px;
+  height: 2px;
+  background: #ffffff;
+  position: relative;
+  animation: scrollPulse 2s infinite ease-in-out;
+}
+
+.portfolio-scroll-button .scroll-arrow:nth-child(1) {
+  animation-delay: 0s;
+  transform: rotate(45deg);
+  transform-origin: right;
+}
+
+.portfolio-scroll-button .scroll-arrow:nth-child(2) {
+  animation-delay: 0.2s;
+  transform: rotate(-45deg) translateX(2px) translateY(-2px);
+  transform-origin: left;
+}
+
+.portfolio-scroll-button .scroll-text {
+  font-size: 0.75rem;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  font-weight: 300;
+  margin-top: 8px;
+  text-align: center;
+  line-height: 1.2;
+  max-width: 120px;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.app.light-mode .portfolio-scroll-button .scroll-arrow {
+  background: #fff;
+}
+
+.app.light-mode .portfolio-scroll-button .scroll-text {
+  color: #fff;
+}
+
 .contact-info {
   z-index: 2;
   text-align: center;
   width: 100%;
   max-width: 700px;
+}
+
+.contact-intro-text {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 300;
+  letter-spacing: 1px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  font-style: italic;
+  opacity: 0.9;
+  text-align: center;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.app.light-mode .contact-intro-text {
+  color: rgba(228, 228, 228, 0.7);
 }
 
 .contact-grid {
@@ -850,6 +1012,28 @@
   flex: 1;
 }
 
+.contact-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.contact-link:hover {
+  padding-left: 40px;
+  border-bottom-color: rgba(44, 44, 44, 0.3);
+}
+
+.contact-link:hover .value {
+  color: #007acc;
+  transform: translateX(-2px);
+}
+
+.contact-link:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 /* Contact Section */
 .contact-section {
   background: linear-gradient(180deg, #e8e8e8 0%, #e0e0e0 100%);
@@ -883,7 +1067,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: 120%;
-  height: 60px;
+  height: 2px;
   background: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
   box-shadow: 
@@ -1047,11 +1231,22 @@
     padding: 0 20px;
   }
   
+  .contact-intro-text {
+    font-size: 0.8rem;
+    margin-bottom: 25px;
+    max-width: 350px;
+    letter-spacing: 0.8px;
+  }
+  
   .contact-item {
     padding: 20px 25px;
   }
   
   .contact-item:hover {
+    padding-left: 30px;
+  }
+  
+  .contact-link:hover {
     padding-left: 30px;
   }
   
@@ -1072,6 +1267,17 @@
     right: 20px;
     bottom: 20px;
     transform: scale(0.9);
+  }
+  
+  .follow-light-button {
+    bottom: 30px;
+    left: 30px;
+    transform: scale(0.9);
+  }
+  
+  .portfolio-scroll-button {
+    bottom: 30px;
+    transform: translateX(-50%) scale(0.9);
   }
   
   .scroll-text {
@@ -1138,6 +1344,14 @@
     padding: 0 15px;
   }
   
+  .contact-intro-text {
+    font-size: 0.75rem;
+    margin-bottom: 20px;
+    max-width: 300px;
+    letter-spacing: 0.6px;
+    line-height: 1.5;
+  }
+  
   .contact-item {
     padding: 15px 20px;
     flex-direction: column;
@@ -1146,6 +1360,10 @@
   }
   
   .contact-item:hover {
+    padding-left: 20px;
+  }
+  
+  .contact-link:hover {
     padding-left: 20px;
   }
   
@@ -1207,6 +1425,27 @@
     height: 4px;
     top: 22px;
   }
+  
+  .follow-light-button {
+    bottom: 25px;
+    left: 25px;
+    transform: scale(0.8);
+  }
+  
+  .follow-light-button .scroll-text {
+    font-size: 0.5rem;
+    max-width: 80px;
+  }
+  
+  .portfolio-scroll-button {
+    bottom: 25px;
+    transform: translateX(-50%) scale(0.8);
+  }
+  
+  .portfolio-scroll-button .scroll-text {
+    font-size: 0.5rem;
+    max-width: 80px;
+  }
 }
 
 /* Section Bottom */
@@ -1247,7 +1486,7 @@
 .scroll-arrow {
   width: 12px;
   height: 2px;
-  background: #fff;
+  background: #ffffff;
   position: relative;
   animation: scrollPulse 2s infinite ease-in-out;
 }
@@ -1265,8 +1504,8 @@
 }
 
 .scroll-text {
-  font-size: 0.65rem;
-  color: #fff;
+  font-size: 0.75rem;
+  color: #ffffff;
   letter-spacing: 0.5px;
   font-weight: 300;
   margin-top: 8px;

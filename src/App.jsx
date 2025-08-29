@@ -107,8 +107,8 @@ function App() {
         
         {showFullPortfolio && (
           <>
-            <AboutSection ref={aboutRef} />
-            <PortfolioSection ref={portfolioRef} />
+            <AboutSection ref={aboutRef} portfolioRef={portfolioRef} />
+            <PortfolioSection ref={portfolioRef} contactRef={contactRef} />
             <ContactSection 
               ref={contactRef} 
               onLightModeTransition={handleLightModeTransition}

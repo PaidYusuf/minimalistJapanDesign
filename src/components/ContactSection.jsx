@@ -23,19 +23,22 @@ const ContactSection = forwardRef(({ onLightModeTransition, onButtonPositionChan
       </div>
       <div className="contact-content">
         <div className="contact-info">
+          <p className="contact-intro-text">
+            Contact me to make that light appear in the deepest darkness
+          </p>
           <div className="contact-grid">
-            <div className="contact-item">
+            <a href="mailto:yusuf.aslan.home@gmail.com" className="contact-item contact-link">
               <span className="label">Email</span>
               <span className="value">yusuf.aslan.home@gmail.com</span>
-            </div>
-            <div className="contact-item">
+            </a>
+            <a href="https://linkedin.com/in/yusufaslan-ai" target="_blank" rel="noopener noreferrer" className="contact-item contact-link">
               <span className="label">LinkedIn</span>
               <span className="value">linkedin.com/in/yusufaslan-ai</span>
-            </div>
-            <div className="contact-item">
+            </a>
+            <a href="https://github.com/PaidYusuf" target="_blank" rel="noopener noreferrer" className="contact-item contact-link">
               <span className="label">GitHub</span>
               <span className="value">github.com/PaidYusuf</span>
-            </div>
+            </a>
             <div className="contact-item">
               <span className="label">Location</span>
               <span className="value">Turkey</span>

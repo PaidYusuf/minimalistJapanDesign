@@ -1,6 +1,15 @@
 import { forwardRef } from 'react'
 
-const AboutSection = forwardRef((props, ref) => {
+const AboutSection = forwardRef(({ portfolioRef }, ref) => {
+  const scrollToPortfolio = () => {
+    if (portfolioRef && portfolioRef.current) {
+      portfolioRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      })
+    }
+  }
+
   return (
     <section ref={ref} className="section about-section">
       <div className="blur-shape about-blur"></div>
@@ -32,6 +41,23 @@ const AboutSection = forwardRef((props, ref) => {
         <div className="vertical-text-right">
           <span>関于我</span>
         </div>
+      </div>
+      <div 
+        className="follow-light-button"
+        onClick={scrollToPortfolio}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            scrollToPortfolio()
+          }
+        }}
+      >
+        <div className="scroll-icon">
+          <div className="scroll-arrow"></div>
+          <div className="scroll-arrow"></div>
+        </div>
+        <span className="scroll-text">follow the light</span>
       </div>
     </section>
   )
