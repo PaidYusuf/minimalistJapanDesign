@@ -24,7 +24,7 @@ const ContactSection = forwardRef(({ onLightModeTransition, onButtonPositionChan
       <div className="contact-content">
         <div className="contact-info">
           <p className="contact-intro-text">
-            Contact me to make that light appear in the deepest darkness
+            Reach out, and together we will kindle light in the deepest shadows
           </p>
           <div className="contact-grid">
             <a href="mailto:yusuf.aslan.home@gmail.com" className="contact-item contact-link">

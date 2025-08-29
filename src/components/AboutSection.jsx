@@ -57,7 +57,7 @@ const AboutSection = forwardRef(({ portfolioRef }, ref) => {
           <div className="scroll-arrow"></div>
           <div className="scroll-arrow"></div>
         </div>
-        <span className="scroll-text">follow the light</span>
+  <span className="scroll-text">Follow the gentle path where hope softly glows</span>
       </div>
     </section>
   )

@@ -39,7 +39,7 @@ const TransitionScreen = ({ onComplete, isLightModeTransition = false }) => {
                   人間の創造力が美しい詳細を作る
                 </div>
                 <div className="english-quote">
-                  "The human touch weaves beauty into every detail, transforming the ordinary into extraordinary. Through creativity and craftsmanship, we breathe life into our visions and illuminate the world with purpose and meaning."
+                  "With every gentle touch, beauty awakens in the quiet corners of the world. Through creativity, we breathe life into dreams and illuminate the ordinary with meaning."
                 </div>
                 <div className="quote-attribution">
                   - The Art of Human Creation
@@ -51,7 +51,7 @@ const TransitionScreen = ({ onComplete, isLightModeTransition = false }) => {
                   光と影が織りなす物語
                 </div>
                 <div className="english-quote">
-                  "In every shadow lies a story waiting to be illuminated, and in every light dwells wisdom earned through darkness. We are the architects of meaning, weaving purpose from the eternal dance between what is seen and unseen."
+                  "Within every shadow, a story waits to be revealed; within every light, wisdom quietly grows. We are the weavers of meaning, shaping purpose from the dance of seen and unseen."
                 </div>
                 <div className="quote-attribution">
                   - Philosophy of Balance

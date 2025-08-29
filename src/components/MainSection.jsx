@@ -41,7 +41,7 @@ const MainSection = forwardRef(({
             <div className="scroll-arrow"></div>
             <div className="scroll-arrow"></div>
           </div>
-          <span className="scroll-text">Scroll to find light again</span>
+          <span className="scroll-text">Let your journey begin—seek the first glimmer of light</span>
         </div>
       )}
       

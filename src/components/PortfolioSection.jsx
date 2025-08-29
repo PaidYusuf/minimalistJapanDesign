@@ -78,7 +78,7 @@ const PortfolioSection = forwardRef(({ contactRef }, ref) => {
           <div className="scroll-arrow"></div>
           <div className="scroll-arrow"></div>
         </div>
-        <span className="scroll-text">reach the light source</span>
+  <span className="scroll-text">Arrive at the source—where dreams illuminate the dark</span>
       </div>
     </section>
   )

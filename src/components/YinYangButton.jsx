@@ -36,7 +36,7 @@ const YinYangButton = ({ onClick, onPositionChange }) => {
           <div className="dot-yin"></div>
         </div>
       </button>
-      <p className="button-hint">Illuminate the hidden stories</p>
+  <p className="button-hint">Awaken the stories that linger in shadow and light</p>
     </div>
   )
 }

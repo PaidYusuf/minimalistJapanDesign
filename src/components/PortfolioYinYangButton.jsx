@@ -36,7 +36,7 @@ const PortfolioYinYangButton = ({ onClick, onPositionChange }) => {
           <div className="dot-yin"></div>
         </div>
       </button>
-      <p className="portfolio-button-hint">Discover the light within</p>
+  <p className="portfolio-button-hint">Uncover the brilliance that lies quietly within</p>
     </div>
   )
 }
