@@ -100,6 +100,9 @@ function App() {
           onTransition={handleTransition}
           onButtonPositionChange={setButtonPosition}
           showButton={!showFullPortfolio}
+          isLightMode={isLightMode}
+          showFullPortfolio={showFullPortfolio}
+          aboutRef={aboutRef}
         />
         
         {showFullPortfolio && (

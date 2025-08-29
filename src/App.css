@@ -778,6 +778,17 @@
   .blur-shape {
     opacity: 0.5;
   }
+  
+  .scroll-down-button {
+    right: 20px;
+    bottom: 20px;
+    transform: scale(0.9);
+  }
+  
+  .scroll-text {
+    font-size: 0.6rem;
+    max-width: 100px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -832,6 +843,17 @@
     font-size: 2rem;
     letter-spacing: 2px;
   }
+  
+  .scroll-down-button {
+    right: 15px;
+    bottom: 25px;
+    transform: scale(0.8);
+  }
+  
+  .scroll-text {
+    font-size: 0.5rem;
+    max-width: 80px;
+  }
 }
 
 /* Section Bottom */
@@ -841,6 +863,76 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
+}
+
+/* Scroll Down Button */
+.scroll-down-button {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.scroll-down-button:hover {
+  opacity: 1;
+  transform: translateY(-5px);
+}
+
+.scroll-icon {
+  display: flex;
+  flex-direction: column;
+  gap: -2px;
+}
+
+.scroll-arrow {
+  width: 12px;
+  height: 2px;
+  background: #fff;
+  position: relative;
+  animation: scrollPulse 2s infinite ease-in-out;
+}
+
+.scroll-arrow:nth-child(1) {
+  animation-delay: 0s;
+  transform: rotate(45deg);
+  transform-origin: right;
+}
+
+.scroll-arrow:nth-child(2) {
+  animation-delay: 0.2s;
+  transform: rotate(-45deg) translateX(2px) translateY(-2px);
+  transform-origin: left;
+}
+
+.scroll-text {
+  font-size: 0.65rem;
+  color: #fff;
+  letter-spacing: 0.5px;
+  font-weight: 300;
+  margin-top: 8px;
+  text-align: center;
+  line-height: 1.2;
+  max-width: 120px;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+@keyframes scrollPulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
 }
 
 /* Yin Yang Button */
