@@ -27,7 +27,9 @@ const MainSection = forwardRef(({
           <h1 className="main-title">YUSUF</h1>
           <p className="subtitle">Computer Engineering Student</p>
           <p className="description">3rd Year • Innovation Driven • Tech Enthusiast</p>
-          <p className="guide-text">Click the glowing arrow in the bottom right to begin your journey</p>
+          {isLightMode && (
+            <p className="guide-text">Click the pulsing button below to explore my journey</p>
+          )}
         </div>
         <div className="vertical-text-left">
           <span>ポートフォリオ</span>
@@ -37,12 +39,11 @@ const MainSection = forwardRef(({
       
       {/* Scroll down button - only show in dark mode when full portfolio is visible */}
       {isLightMode && showFullPortfolio && (
-        <div className="scroll-down-button" onClick={scrollToAbout}>
+        <div className="main-scroll-down-button" onClick={scrollToAbout}>
           <div className="scroll-icon">
             <div className="scroll-arrow"></div>
             <div className="scroll-arrow"></div>
           </div>
-          <span className="scroll-text">Let your journey begin—seek the first glimmer of light</span>
         </div>
       )}
       

@@ -469,11 +469,12 @@
   opacity: 0.7;
   transition: all 0.3s ease;
   z-index: 10;
+  transform: scale(2.0);
 }
 
 .follow-light-button:hover {
   opacity: 1;
-  transform: translateY(-5px);
+  transform: translateY(-5px) scale(2.0);
 }
 
 .follow-light-button .scroll-icon {
@@ -483,8 +484,8 @@
 }
 
 .follow-light-button .scroll-arrow {
-  width: 12px;
-  height: 2px;
+  width: 18px;
+  height: 3px;
   background: #fff;
   position: relative;
   animation: scrollPulse 2s infinite ease-in-out;
@@ -903,7 +904,7 @@
   position: absolute;
   bottom: 50px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) scale(2.0);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -916,7 +917,7 @@
 
 .portfolio-scroll-button:hover {
   opacity: 1;
-  transform: translateX(-50%) translateY(-5px);
+  transform: translateX(-50%) translateY(-5px) scale(2.0);
 }
 
 .portfolio-scroll-button .scroll-icon {
@@ -926,8 +927,8 @@
 }
 
 .portfolio-scroll-button .scroll-arrow {
-  width: 12px;
-  height: 2px;
+  width: 18px;
+  height: 3px;
   background: #ffffff;
   position: relative;
   animation: scrollPulse 2s infinite ease-in-out;
@@ -1293,18 +1294,23 @@
   .scroll-down-button {
     right: 20px;
     bottom: 20px;
-    transform: scale(0.9);
+    transform: scale(1.8);
+  }
+  
+  .main-scroll-down-button {
+    bottom: 40px;
+    transform: translateX(-50%) scale(2.7);
   }
   
   .follow-light-button {
     bottom: 30px;
     left: 30px;
-    transform: scale(0.9);
+    transform: scale(1.8);
   }
   
   .portfolio-scroll-button {
     bottom: 30px;
-    transform: translateX(-50%) scale(0.9);
+    transform: translateX(-50%) scale(1.8);
   }
   
   .scroll-text {
@@ -1421,7 +1427,12 @@
   .scroll-down-button {
     right: 15px;
     bottom: 25px;
-    transform: scale(0.8);
+    transform: scale(1.5);
+  }
+  
+  .main-scroll-down-button {
+    bottom: 30px;
+    transform: translateX(-50%) scale(2.2);
   }
   
   .scroll-text {
@@ -1464,7 +1475,7 @@
   .follow-light-button {
     bottom: 25px;
     left: 25px;
-    transform: scale(0.8);
+    transform: scale(1.5);
   }
   
   .follow-light-button .scroll-text {
@@ -1474,7 +1485,7 @@
   
   .portfolio-scroll-button {
     bottom: 25px;
-    transform: translateX(-50%) scale(0.8);
+    transform: translateX(-50%) scale(1.5);
   }
   
   .portfolio-scroll-button .scroll-text {
@@ -1505,11 +1516,12 @@
   opacity: 0.7;
   transition: all 0.3s ease;
   z-index: 10;
+  transform: scale(2.0);
 }
 
 .scroll-down-button:hover {
   opacity: 1;
-  transform: translateY(-5px);
+  transform: translateY(-5px) scale(2.0);
 }
 
 .scroll-icon {
@@ -1519,8 +1531,8 @@
 }
 
 .scroll-arrow {
-  width: 12px;
-  height: 2px;
+  width: 18px;
+  height: 3px;
   background: #ffffff;
   position: relative;
   animation: scrollPulse 2s infinite ease-in-out;
@@ -1549,6 +1561,26 @@
   max-width: 120px;
   font-style: italic;
   opacity: 0.9;
+}
+
+/* Main Section Scroll Down Button - Bottom Center */
+.main-scroll-down-button {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%) scale(3.0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.main-scroll-down-button:hover {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-5px) scale(3.0);
 }
 
 @keyframes scrollPulse {
