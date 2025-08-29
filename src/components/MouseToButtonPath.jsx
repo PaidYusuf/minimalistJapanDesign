@@ -29,7 +29,7 @@ const MouseToButtonPath = ({ isVisible, buttonPosition }) => {
       const endY = buttonPosition.y
 
       const distance = Math.sqrt((endX - startX) ** 2 + (endY - startY) ** 2)
-      const numberOfPoints = Math.min(Math.max(Math.floor(distance / 50), 3), 8)
+      const numberOfPoints = Math.min(Math.max(Math.floor(distance / 50), 3), 20)
       
       if (distance < 100) {
         setPathPoints([])

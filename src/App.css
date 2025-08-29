@@ -275,7 +275,7 @@
 
 /* Main Container */
 .main-container {
-  padding-top: 80px;
+  padding-top: 40px;
   scroll-behavior: smooth;
 }
 
@@ -1136,9 +1136,9 @@ body:has(.transition-screen) {
 /* Mouse to Button Path */
 .path-dot {
   position: fixed;
-  width: 6px;
-  height: 6px;
-  background: rgba(255, 215, 0, 0.6);
+  width: 10px;
+  height: 10px;
+  background: rgba(87, 79, 36, 0.6);
   border-radius: 50%;
   pointer-events: none;
   z-index: 10;
