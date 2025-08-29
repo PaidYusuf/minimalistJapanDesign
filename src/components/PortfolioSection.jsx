@@ -4,6 +4,18 @@ const PortfolioSection = forwardRef((props, ref) => {
   return (
     <section ref={ref} className="section portfolio-section">
       <div className="blur-shape portfolio-blur"></div>
+      <div className="rain-container">
+        <div className="rain-drop rain-drop-1"></div>
+        <div className="rain-drop rain-drop-2"></div>
+        <div className="rain-drop rain-drop-3"></div>
+        <div className="rain-drop rain-drop-4"></div>
+        <div className="rain-drop rain-drop-5"></div>
+        <div className="rain-drop rain-drop-6"></div>
+        <div className="rain-drop rain-drop-7"></div>
+        <div className="rain-drop rain-drop-8"></div>
+        <div className="rain-drop rain-drop-9"></div>
+        <div className="rain-drop rain-drop-10"></div>
+      </div>
       <div className="section-header">
         <h2 className="section-title">Portfolio</h2>
       </div>
