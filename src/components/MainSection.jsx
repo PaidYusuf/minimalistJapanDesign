@@ -27,6 +27,7 @@ const MainSection = forwardRef(({
           <h1 className="main-title">YUSUF</h1>
           <p className="subtitle">Computer Engineering Student</p>
           <p className="description">3rd Year • Innovation Driven • Tech Enthusiast</p>
+          <p className="guide-text">Click the glowing arrow in the bottom right to begin your journey</p>
         </div>
         <div className="vertical-text-left">
           <span>ポートフォリオ</span>
