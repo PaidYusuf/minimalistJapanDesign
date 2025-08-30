@@ -913,10 +913,7 @@
 
 /* Portfolio Scroll Button */
 .portfolio-scroll-button {
-  position: absolute;
-  bottom: 50px;
-  left: 50%;
-  transform: translateX(-50%) scale(2.0);
+  position: static;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -925,11 +922,13 @@
   opacity: 0.7;
   transition: all 0.3s ease;
   z-index: 10;
+  margin: 3rem auto 2rem;
+  transform: scale(2.0);
 }
 
 .portfolio-scroll-button:hover {
   opacity: 1;
-  transform: translateX(-50%) translateY(-5px) scale(2.0);
+  transform: translateY(-5px) scale(2.0);
 }
 
 .portfolio-scroll-button .scroll-icon {
@@ -1219,8 +1218,8 @@
   }
   
   .portfolio-scroll-button {
-    bottom: 30px;
-    transform: translateX(-50%) scale(1.8);
+    margin: 2rem auto 1rem;
+    transform: scale(1.8);
   }
   
   .scroll-text {
@@ -1679,6 +1678,24 @@
   overflow: hidden;
 }
 
+/* Fuji Mountain Background (Inline SVG from user sketch) */
+.transition-screen::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: 90vh;
+  /* Inline SVG approximating the provided sketch: red sun, outlined mountain, white snow cap, light gray snow drifts */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 600'%3E%3Ccircle cx='600' cy='250' r='220' fill='%23e44f4f'/%3E%3C/svg%3E" );
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain;
+  opacity: 0.85;
+  z-index: -1;
+}
+
 /* Prevent scrolling when transition is active */
 body:has(.transition-screen) {
   overflow: hidden;
@@ -1707,7 +1724,7 @@ body:has(.transition-screen) {
   font-weight: 300;
   margin-bottom: 2rem;
   font-family: 'Noto Sans JP', sans-serif;
-  color: #ffd700;
+  color: #ffe551;
   opacity: 0;
   animation: slideUp 1s ease-out 0.5s forwards;
   transform: translateZ(0); /* Force hardware acceleration */
