@@ -107,8 +107,8 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 📞 Contact
 
-- **Email**: yusuf@example.com
-- **LinkedIn**: [linkedin.com/in/yusuf](https://www.linkedin.com/in/yusufaslan-ai/)
+- **Email**: yusuf.aslan.home@gmail.com
+- **LinkedIn**: [linkedin.com/in/yusufaslan-ai](https://www.linkedin.com/in/yusufaslan-ai/)
 - **GitHub**: [github.com/PaidYusuf](https://github.com/PaidYusuf)
 
 ---
